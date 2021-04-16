@@ -1,0 +1,124 @@
+import React, { Component } from "react";
+import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
+import Header from "../commanscreen/Header";
+
+class ItemDetail extends Component {
+  constructor(props) {
+    super(props);
+    // this.state = {  };
+  }
+  render() {
+    return (
+      <View style={{ height: "100%", backgroundColor: "#fff" }}>
+        <View style={{ height: "97%" }}>
+          <Header
+            leftsideicon={require("../image/backwhite.png")}
+            leftpress={() => this.props.navigation.goBack()}
+            rightpress={() => alert("Right Pressed...!")}
+            rightsideicon={require("../image/homewhite.png")}
+            leftsidetext={"BACK"}
+            centertext={"SETTING"}
+            centerpress={() => this.props.navigation.navigate("SettingPage")}
+            rightsidetext={"HOME"}
+            rightpress={() =>
+              this.props.navigation.navigate("RestaurentWelcome")
+            }
+          />
+          <View style={styles.header_text_view}>
+            <Text style={styles.heade_text}>SWISS CHALET</Text>
+          </View>
+          <View
+            style={{
+              paddingVertical: 20,
+              alignItems: "center",
+            }}
+          >
+            <Text style={{ fontWeight: "bold", fontSize: 22 }}>
+              Chicken Fingerss
+            </Text>
+          </View>
+          <View style={{ paddingVertical: 5, alignItems: "center" }}>
+            <Image
+              source={require("../image/fingers.jpg")}
+              style={{
+                width: 300,
+                height: 200,
+                resizeMode: "contain",
+                borderRadius: 5,
+              }}
+            />
+          </View>
+          <View style={{ paddingHorizontal: 15 }}>
+            <View
+              style={{
+                paddingVertical: 10,
+                borderBottomColor: "#BEBEBE",
+                borderBottomWidth: 1,
+                paddingHorizontal: 10,
+              }}
+            >
+              <Text style={{ fontWeight: "bold", fontSize: 14 }}>
+                Chicken fingers, also known as chicken tenders, chicken goujons,
+                chicken strips, tendies or chicken fillets, are chicken meat
+                prepared from the pectoralis minor muscles of the animal.
+              </Text>
+            </View>
+            <View
+              style={{
+                paddingHorizontal: 10,
+                flexDirection: "row",
+                paddingVertical: 10,
+                alignItems: "center",
+                borderBottomWidth: 1,
+                borderBottomColor: "#BEBEBE",
+              }}
+            >
+              <Text style={{ fontWeight: "bold" }}>Allergy</Text>
+              <Text style={{ fontSize: 16 }}> info:</Text>
+              <Text style={{ paddingHorizontal: 5 }}>None</Text>
+            </View>
+            <View
+              style={{
+                paddingHorizontal: 10,
+                width: "100%",
+                flexDirection: "row",
+                paddingVertical: 10,
+                alignItems: "center",
+                borderBottomWidth: 1,
+                borderBottomColor: "#BEBEBE",
+              }}
+            >
+              <Text style={{ fontWeight: "bold" }}>Notes:</Text>
+              {/* <Text style={{fontSize:16}}>  info:</Text> */}
+              <Text style={{ paddingHorizontal: 5 }}>
+                Chicken fingers, also known as chicken.
+              </Text>
+            </View>
+          </View>
+        </View>
+        {/* Bottom View */}
+        <View
+          style={{
+            height: "3%",
+            backgroundColor: "#F3C223",
+            borderTopLeftRadius: 10,
+            borderTopRightRadius: 10,
+          }}
+        ></View>
+      </View>
+    );
+  }
+}
+const styles = StyleSheet.create({
+  header_text_view: {
+    paddingVertical: 10,
+    backgroundColor: "#3C7D92",
+    alignItems: "center",
+  },
+  heade_text: {
+    fontWeight: "bold",
+    fontSize: 12,
+    color: "#fff",
+  },
+});
+export default ItemDetail;
